@@ -14,6 +14,11 @@
 		E8E16D5E225056C700F1756C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E16D5C225056C700F1756C /* LaunchScreen.storyboard */; };
 		E8E16D69225056C700F1756C /* HydrantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E16D68225056C700F1756C /* HydrantsTests.swift */; };
 		E8E16D74225056C700F1756C /* HydrantsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E16D73225056C700F1756C /* HydrantsUITests.swift */; };
+		E8E16D83225056F400F1756C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E16D82225056F400F1756C /* MapKit.framework */; };
+		E8E16D8522505E2500F1756C /* HydrantUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E16D8422505E2500F1756C /* HydrantUpdate.swift */; };
+		E8E16D8722505E3300F1756C /* HydrantStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E16D8622505E3300F1756C /* HydrantStore.swift */; };
+		E8E16D8922505E3C00F1756C /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E16D8822505E3C00F1756C /* ImageStore.swift */; };
+		E8E16D8B225079DE00F1756C /* HydrantAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E16D8A225079DE00F1756C /* HydrantAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		E8E16D6F225056C700F1756C /* HydrantsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HydrantsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E16D73225056C700F1756C /* HydrantsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrantsUITests.swift; sourceTree = "<group>"; };
 		E8E16D75225056C700F1756C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8E16D82225056F400F1756C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E8E16D8422505E2500F1756C /* HydrantUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrantUpdate.swift; sourceTree = "<group>"; };
+		E8E16D8622505E3300F1756C /* HydrantStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrantStore.swift; sourceTree = "<group>"; };
+		E8E16D8822505E3C00F1756C /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		E8E16D8A225079DE00F1756C /* HydrantAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrantAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8E16D83225056F400F1756C /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +92,7 @@
 				E8E16D67225056C700F1756C /* HydrantsTests */,
 				E8E16D72225056C700F1756C /* HydrantsUITests */,
 				E8E16D51225056C500F1756C /* Products */,
+				E8E16D81225056F300F1756C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,7 +111,11 @@
 			children = (
 				E8E16D53225056C500F1756C /* AppDelegate.swift */,
 				E8E16D55225056C500F1756C /* ViewController.swift */,
+				E8E16D8A225079DE00F1756C /* HydrantAnnotation.swift */,
 				E8E16D57225056C500F1756C /* Main.storyboard */,
+				E8E16D8422505E2500F1756C /* HydrantUpdate.swift */,
+				E8E16D8622505E3300F1756C /* HydrantStore.swift */,
+				E8E16D8822505E3C00F1756C /* ImageStore.swift */,
 				E8E16D5A225056C700F1756C /* Assets.xcassets */,
 				E8E16D5C225056C700F1756C /* LaunchScreen.storyboard */,
 				E8E16D5F225056C700F1756C /* Info.plist */,
@@ -123,6 +139,14 @@
 				E8E16D75225056C700F1756C /* Info.plist */,
 			);
 			path = HydrantsUITests;
+			sourceTree = "<group>";
+		};
+		E8E16D81225056F300F1756C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8E16D82225056F400F1756C /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8E16D8722505E3300F1756C /* HydrantStore.swift in Sources */,
+				E8E16D8522505E2500F1756C /* HydrantUpdate.swift in Sources */,
 				E8E16D56225056C500F1756C /* ViewController.swift in Sources */,
+				E8E16D8922505E3C00F1756C /* ImageStore.swift in Sources */,
 				E8E16D54225056C500F1756C /* AppDelegate.swift in Sources */,
+				E8E16D8B225079DE00F1756C /* HydrantAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
