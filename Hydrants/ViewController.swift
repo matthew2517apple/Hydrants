@@ -23,6 +23,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         locationManager!.delegate = self
         locationManager!.requestWhenInUseAuthorization()
         hydrantMap!.delegate = self
+        
+        for hydrant in myHydrantStore!.myHydrantUpdates {
+            let annotation = HydrantAnnotation(hydrant: hydrant)
+            hydrantMap.addAnnotation(annotation)
+        }
     }
 
     @IBAction func addHydrantUpdate(_ sender: Any) {
@@ -95,6 +100,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         alertController.addAction(cancelAction)
         
         present(alertController, animated: true)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is HydrantAnnotation {
+            let hydrantAnnotation = annotation as! HydrantAnnotation
+            let pinAnnotationView = MKPinAnnotationView()
+            pinAnnotationView.annotation = hydrantAnnotation
+            pinAnnotationView.canShowCallout = true
+            
+            let image = myHydrantStore!.getImage(key: hydrantAnnotation.hydrant.imageKey)
+            
+            let photoView = UIImageView()
+            photoView.contentMode = .scaleAspectFit
+            photoView.image = image
+            let heightConstraint = NSLayoutConstraint(item: photoView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 200)
+            photoView.addConstraint(heightConstraint)
+            
+            pinAnnotationView.detailCalloutAccessoryView = photoView
+            
+            return pinAnnotationView
+        }
+        
+        return nil
     }
 }
 
